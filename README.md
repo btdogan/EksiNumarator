@@ -8,3 +8,4 @@ NEEDS TO BE DONE:
 + Clean up the code
 + Turkish language charcode
 + Plugin page logo
++ If the entry is in the first place and there is a link below with "showall" class, entry number is shown wrong. 
