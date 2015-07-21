@@ -3,7 +3,7 @@
 
   "name": "EksiNumarator",
   "description": "Sözlükteki girdi sıra sayısını gösteren eklentidir",
-  "version": "1.0.1",
+  "version": "1.0.2",
 
   "browser_action": {
     "default_icon": "icon.png",
