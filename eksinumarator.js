@@ -1,5 +1,5 @@
 chrome.storage.sync.get("girdiSayisi", function(items){
-    console.log(items.girdiSayisi);
+
     count = parseInt(items.girdiSayisi);
 
     var page = ($(".pager").data("currentpage") ? $(".pager").data("currentpage") : 1),
@@ -14,8 +14,14 @@ chrome.storage.sync.get("girdiSayisi", function(items){
         console.log(i)
         $(".content")[cont].innerHTML = i + ". "  + $(".content")[cont].innerHTML;
     }
+});
 
 
+chrome.storage.sync.get("zaman", function(items){
+  var timer = parseInt(items.zaman);
 
+setInterval(function(){
+$('#feed-refresh-link')[0].click();
+}, timer);
 
 });
