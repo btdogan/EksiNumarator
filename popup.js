@@ -21,10 +21,10 @@ function restore_options() {
   // Use default value
   chrome.storage.sync.get({
     "girdiSayisi": "10",
-    "zamanci": "0"
+    "zamanci": "15000"
   }, function(items) {
     document.getElementById('girdi').value = items.girdiSayisi;
-    document.getElementById('zamanci').value = items.zaman;  
+    document.getElementById('zamanci').value = items.zaman;
 
   });
 }
