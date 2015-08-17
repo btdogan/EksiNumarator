@@ -16,6 +16,10 @@ chrome.storage.sync.get("girdiSayisi", function(items){
     }
 });
 
+$("a[href*='imgur']").each(function() { 
+      this.href = this.href.replace("imgur", "filmot");
+   });
+
 
 chrome.storage.sync.get("zaman", function(items){
   var timer = parseInt(items.zaman);
