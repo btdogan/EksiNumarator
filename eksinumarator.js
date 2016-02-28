@@ -1,5 +1,8 @@
 $("document").ready(function(){
 
+
+
+
 chrome.storage.sync.get("girdiSayisi", function (items) {
 
     var count = parseInt(items.girdiSayisi);
@@ -41,4 +44,18 @@ chrome.storage.sync.get("ackapas", function (items) {
     }
 
 });
+
+
+$(".twitter-info-card").hide();
+$(".ad-banner").hide();
+
+chrome.storage.sync.get("konulus", function (items) {
+    var konuluf = items.konulus;
+
+    if (konuluf) {
+        $("#videos").hide();
+    }
+
+});
+
 })

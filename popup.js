@@ -3,11 +3,13 @@ function save_options() {
   var girdi = document.getElementById('girdi').value;
   var zamanci = document.getElementById('zamanci').value;
   var ackapa = document.getElementById('ackapa').checked;
+  var konulu = document.getElementById('konulu').checked;
 
   chrome.storage.sync.set({
     "girdiSayisi": girdi,
     "zaman": zamanci,
-    "ackapas": ackapa
+    "ackapas": ackapa,
+    "konulus": konulu
   }, function() {
     // Update status to let user know options were saved.
     var status = document.getElementById('status');
@@ -26,10 +28,12 @@ function restore_options() {
     "girdiSayisi": "10",
     "zaman": "15000",
     "ackapas": true,
+    "konulus": true
   }, function(items) {
     document.getElementById('girdi').value = items.girdiSayisi;
     document.getElementById('zamanci').value = items.zaman;
     document.getElementById('ackapa').checked = items.ackapas;
+    document.getElementById('konulu').checked = items.konulus;
   });
 }
 document.addEventListener('DOMContentLoaded', restore_options);

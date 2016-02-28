@@ -1,28 +1,21 @@
 {
-  "manifest_version": 2,
-
-  "name": "EksiNumarator",
-  "description": "Sözlükteki girdi sıra sayısını gösteren ve sol frame'i yenileneyen eklentidir.",
-  "version": "1.2.0",
-
-  "icons": {
-    "128": "icon128.png"
-  },
-
-  "browser_action": {
-    "default_icon": "icon19.png",
-    "default_popup": "popup.html"
-  },
-
-  "permissions": [
-    "activeTab",
-    "https://ajax.googleapis.com/",
-    "storage"
-  ],
-
-  "content_scripts": [ {
-    "run_at": "document_end",
-    "js": [ "jquery.js", "eksinumarator.js" ],
-    "matches": [ "http://eksisozluk.com/*", "https://eksisozluk.com/*" ]
-  }]
+   "browser_action": {
+      "default_icon": "icon19.png",
+      "default_popup": "popup.html"
+   },
+   "content_scripts": [ {
+      "js": [ "jquery.js", "eksinumarator.js" ],
+      "matches": [ "http://eksisozluk.com/*", "https://eksisozluk.com/*" ],
+      "run_at": "document_end"
+   } ],
+   "description": "Sözlükteki girdi sıra sayısını gösteren ve sol frame'i yenileneyen eklentidir.",
+   "icons": {
+      "128": "icon128.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA1uViJ2eucIcWNqQu830p8cbZ68YUtLP2WcjrASa0wYQl8ICoYG0pgpVRclyFx+cK1riZVSiOpiim25dQbeJ9QdvqwOZzX+QXNq9rTroI7XPieXHsOmUIfxHoHDQr/7XyWl1+i3aRCTkUmNO2kS1W0juFNR7iA6e89MJ0l4ZP3uxUwANeHaQ5U0jQMbulKOzfpgJwlzDjlZRUjHLbcmlJ3bcf09CiFuSTQA+2Vf+a8Btp4PD7T1E+qIqpcOhdI6qkRiP1Kbwh5Z+9kNaEieILcXbm4sIw1iBMmBtQYvyK93nSSjJvlLyWXZ+gPsqoLyO+Juzp/J2PBw77IcjexqDQFQIDAQAB",
+   "manifest_version": 2,
+   "name": "EksiNumarator",
+   "permissions": [ "activeTab", "https://ajax.googleapis.com/", "storage" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.2.0"
 }
