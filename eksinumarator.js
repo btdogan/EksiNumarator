@@ -12,17 +12,12 @@ $("document").ready(function () {
             ente = Number(start) + Number(once),
             ente2 = Number(tot) + Number(once);
 
-        for (i = ente; i <= ente2; i++) {
+        for (var i = ente; i <= ente2; i++) {
             var cont = i - (page * count) + count - 1 - once;
             var content = $(".content")[cont];
             content.innerHTML = i + ". " + content.innerHTML;
         }
     });
-
-    $("a[href*='imgur']").each(function () {
-        this.href = this.href.replace("imgur", "filmot");
-    });
-
 
     chrome.storage.sync.get("ackapas", function (items) {
         var ackapaf = items.ackapas;
@@ -32,11 +27,9 @@ $("document").ready(function () {
             chrome.storage.sync.get("zaman", function (items) {
                 var timer = parseInt(items.zaman);
 
-
                 setInterval(function () {
                     $('#feed-refresh-link')[0].click();
                 }, timer);
-
 
             });
         }
@@ -54,14 +47,4 @@ $("document").ready(function () {
 
     $("#aside").hide();
 
-
-    chrome.storage.sync.get("konulus", function (items) {
-        var konuluf = items.konulus;
-
-        if (konuluf) {
-            $("#videos").hide();
-        }
-
-    });
-
-})
+});
